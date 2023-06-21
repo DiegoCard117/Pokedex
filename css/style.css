@@ -1,0 +1,91 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Silkscreen', cursive;
+    letter-spacing: -3px;
+}
+
+body {
+    text-align: center;
+    min-height: 100vh;
+}
+
+main {
+    display: inline-block;
+    margin-top: 5%;
+    padding: 10px;
+    position: relative;
+}
+
+.pokedex {
+    width: 100%;
+    max-width: 425px;
+}
+
+.poke_img {
+    position: absolute;
+    left: 48%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    height: 18%;
+}
+
+.poke_data {
+    position: absolute;
+    top: 54.5%;
+    right: 27%;
+    font-size: clamp(8px , 5vw , 25px);
+}
+
+.poke_name {
+    text-transform: capitalize;
+}
+
+.form {
+    position: absolute;
+    top: 65%;
+    left: 13.5%;
+    width:65%;
+}
+
+.search {
+    width: 100%;
+    padding: 5%;
+    outline: none;
+    border-radius: 10px;
+    font-size: clamp(8px , 5vw , 1rem);
+    box-shadow: -3px 4px 0 #888, -5px 7px 0 #1b1b1b;
+}
+
+
+.btn_prev {
+    position: absolute;
+    top: 78%;
+    left: 25%;
+}
+
+.btn_next {
+    position: absolute;
+    top: 78%;
+    left: 50%;
+}
+
+.btn {
+    width: 15%;
+    height: 5%;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: -3px 4px 0 #888, -5px 7px 0 #1b1b1b;
+}
+
+.btn:hover{
+    box-shadow: 0px 0px 0px transparent;
+    top: 79%;
+    transform: translateX(-7px);
+}
+
