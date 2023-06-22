@@ -9,6 +9,8 @@ const btnNext = document.querySelector('.btn_next')
 
 let search = 1
 
+
+
 const fetchPokemon = async (pokemon) => {
     const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
 
@@ -28,6 +30,37 @@ const fetchPokemon = async (pokemon) => {
     const data = await fetchPokemon(pokemon)
 
     if (data) {
+        //hp
+        const hp = data['stats']['0']['base_stat']
+        const hpstat = document.querySelector('#hp')
+            hpstat.setAttribute("style", "width: " + hp + "%")
+            hpstat.textContent = hp
+        //attack
+        const attack = data['stats']['1']['base_stat']
+        const attackstats = document.querySelector('#attack')
+            attackstats.setAttribute("style", "width: " + attack + "%")
+            attackstats.textContent = attack
+        //defense
+        const defense = data['stats']['2']['base_stat']
+        const deffensestats = document.querySelector('#defense')
+            deffensestats.setAttribute("style", "width: " + defense + "%")
+            deffensestats.textContent = defense
+        //special-attack
+        const specialAttack = data['stats']['3']['base_stat']
+        const specialAttackStats = document.querySelector('#special_attack')
+            specialAttackStats.setAttribute("style", "width: " + specialAttack + "%")
+            specialAttackStats.textContent = specialAttack
+        //special-deffense
+        const specialdefense = data['stats']['4']['base_stat']
+        const specialdefenseStats = document.querySelector('#special_defense')
+            specialdefenseStats.setAttribute("style", "width: " + specialdefense + "%")
+            specialdefenseStats.textContent = specialdefense
+        //speed
+        const speed = data['stats']['5']['base_stat']
+        const speedStats = document.querySelector('#speed')
+            speedStats.setAttribute("style", "width: " + speed + "%")
+            speedStats.textContent = speed
+
         imgPokemon.style.display = 'block'
         namePokemon.textContent = data.name; //tutorial esta innerHTML
         numberPokemon.textContent = data.id
@@ -59,3 +92,12 @@ btnNext.addEventListener('click', () => {
 })
 
 renderPokemon(search)
+
+
+//const input2 = document.querySelector('.stats')
+
+const Pokestatus = document.querySelector('.barra div')
+
+const alteraStatus = () => {
+    Pokestatus.setAttribute("style", "width: " + input2.value + "%")
+}
