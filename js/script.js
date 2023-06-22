@@ -9,6 +9,7 @@ const btnNext = document.querySelector('.btn_next')
 
 let search = 1
 
+
 const fetchPokemon = async (pokemon) => {
     const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
 
@@ -28,6 +29,7 @@ const fetchPokemon = async (pokemon) => {
     const data = await fetchPokemon(pokemon)
 
     if (data) {
+
         //hp
         const hp = data['stats']['0']['base_stat']
         const hpstat = document.querySelector('#hp')
@@ -57,7 +59,7 @@ const fetchPokemon = async (pokemon) => {
         const specialdefenseStats = document.querySelector('#special_defense')
             specialdefenseStats.setAttribute("style", "width: " + specialdefense + "%")
             specialdefenseStats.textContent = specialdefense
-            
+
         //speed
         const speed = data['stats']['5']['base_stat']
         const speedStats = document.querySelector('#speed')
@@ -85,7 +87,13 @@ const fetchPokemon = async (pokemon) => {
         imgPokemon.style.display = 'block'
         namePokemon.textContent = data.name; 
         numberPokemon.textContent = data.id
-        imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
+
+        if(search < '650') {
+            imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
+        } else {
+            imgPokemon.src = data['sprites']['versions']['generation-vii']['ultra-sun-ultra-moon']['front_default']
+        }
+
         input.value = ''
         search = data.id
     } else {
