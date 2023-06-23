@@ -93,6 +93,8 @@ main {
     border-radius: 10px;
     font-size: clamp(8px , 5vw , 1rem);
     box-shadow: -3px 4px 0 #888, -5px 7px 0 #1b1b1b;
+    position: relative;
+    left: -10px;
 }
 
 .btn_prev {
@@ -104,7 +106,7 @@ main {
 .btn_next {
     position:absolute;
     top: 130%;
-    left: 62%;
+    left: 61%;
     z-index: 2;
 }
 
@@ -127,7 +129,7 @@ main {
     margin: 20px;
     position: absolute;
     top: 150%;
-    left: 24%;
+    left: 29%;
     transform: translate(-50%, -50%);
 }
 
@@ -154,6 +156,7 @@ main {
     color: white;
     margin: 5px;
     margin-bottom: 15px;
+
 }
 
 
@@ -164,3 +167,19 @@ main {
 #special_attack{background: purple;}
 #special_defense{background: grey;}
 #speed{background: orange;}
+
+@media screen and (min-width: 667px) { 
+    .barra {
+        width: 400px;
+        left: 8%;
+        position: relative;     
+    }
+    .tipos {
+        top: 80%;
+        left: 80%;
+    }
+
+    .status {
+        width: 152%;
+    }
+}

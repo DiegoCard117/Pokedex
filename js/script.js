@@ -19,7 +19,7 @@ const fetchPokemon = async (pokemon) => {
     }
 }
 
- const renderPokemon = async (pokemon) => {
+const renderPokemon = async (pokemon) => {
 
     namePokemon.textContent = 'Loading...'
     numberPokemon.innerHTML = ''
@@ -101,7 +101,7 @@ const fetchPokemon = async (pokemon) => {
         namePokemon.innerHTML = 'Not Found'
         numberPokemon.innerHTML = ''
     }
- }
+}
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -122,11 +122,3 @@ btnNext.addEventListener('click', () => {
 
 renderPokemon(search)
 
-
-//const input2 = document.querySelector('.stats')
-
-const Pokestatus = document.querySelector('.barra div')
-
-const alteraStatus = () => {
-    Pokestatus.setAttribute("style", "width: " + input2.value + "%")
-}
